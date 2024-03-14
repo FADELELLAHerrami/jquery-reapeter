@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+</head>
+<body>
+  <form action="#" class="repeater" enctype="multipart/form-data">
+
+    <div data-repeater-list="group-a">
+
+      <div data-repeater-item>
+
+        <input class="zzzz" type="text" name="text-input" value="A"/>
+        <textarea name="textarea-input">A</textarea>
+        <input type="radio" name="radio-input" value="A" checked/>
+        <input type="radio" name="radio-input" value="B"/>
+        <input type="checkbox" name="checkbox-input" value="A" checked/>
+        <input type="checkbox" name="checkbox-input" value="B"/>
+        <select name="select-input">
+          <option value="A" selected>A</option>
+          <option value="B">B</option>
+        </select>
+        <select name="multiple-select-input" multiple>
+          <option value="A" selected>A</option>
+          <option value="B" selected>B</option>
+        </select>
+
+        <input data-repeater-delete type="button" value="Delete"/>
+
+      </div>
+
+    </div>
+
+    <button data-repeater-create type="button" onclick="duplicateComponenet(this)">Add</button>
+
+  </form>
+
+  <script src="./jquery/jquery/jquery.js"></script>
+  <script src="./jquery/jquery-repeater/jquery-repeater.js"></script>
+  <script>
+
+    $('.repeater').repeater({
+      isFirstItemUndeletable:true,
+    });
+
+    function duplicateComponenet(button){
+      console.log(button.parentNode.querySelector(".zzzz"));
+    }
+
+
+  </script>
+</body>
+</html>
